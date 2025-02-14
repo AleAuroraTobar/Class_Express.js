@@ -1,17 +1,29 @@
-// ==================== EXPRESS.JS API EXERCISE ====================
-// 📌 What is an API?
-// An **API (Application Programming Interface)** is a set of rules that allows different software applications to communicate with each other.  
-// APIs define how requests and responses should be structured, enabling applications to send and receive data.  
-// In this case, we are building a **REST API** that allows clients (browsers, Postman, or other apps) to interact with a **products database (JSON file)**.
+// ==================== EXPRESS.JS REST API EXERCISE ====================
+// 📌 What is a REST API?
+// A **REST API (Representational State Transfer API)** is a web service that allows applications to communicate using standard HTTP methods.  
+// REST follows a **stateless architecture**, meaning each request from a client contains all the necessary information,  
+// and the server does not store any client state between requests.  
+// In this exercise, we are building a **REST API** that enables clients (browsers, Postman, or other apps) to interact with a **products database (JSON file)**.
 
 // 📌 What is Express.js?
-// Express.js is a **lightweight web framework for Node.js** that simplifies the creation of web servers and APIs.  
-// It helps manage HTTP requests (GET, POST, PUT, DELETE) and responses efficiently without writing complex server code.
+// Express.js is a **lightweight and flexible web framework for Node.js** that simplifies the creation of REST APIs.  
+// It provides tools to handle **HTTP methods (`GET`, `POST`, `PUT`, `DELETE`)**, manage routes, and send structured responses.  
+// Using Express, we can quickly build APIs that allow applications to exchange data efficiently.  
 
-// 📌 How are we using Express in this exercise?
-// - We create a simple API that **manages a list of products** stored in a JSON file (`productos.json`).
-// - Users can **retrieve** (`GET`) and **add new products** (`POST`) using Postman.
-// - Express.js will handle the requests, read/write the JSON file, and send appropriate responses.
+// 📌 How are we implementing REST principles in this exercise?
+// - **Stateless Communication:** Each request from the client contains all the information needed to process it.  
+// - **Resource-Based Structure:** The API is structured around **resources**, such as "products".  
+// - **Standard HTTP Methods:**  
+//   - `GET /productos` → Retrieve all products.  
+//   - `POST /productos` → Add a new product.  
+//   - `PUT /productos/:id` → Update an existing product.  
+//   - `DELETE /productos/:id` → Remove a product.  
+// - **JSON as the Standard Format:** Data is exchanged in JSON format for easy parsing and compatibility.  
+
+// 📌 How are we using Express.js to build this REST API?
+// - We create an **API that manages a list of products** stored in a JSON file (`productos.json`).
+// - Users can **retrieve** (`GET`), **add** (`POST`), **update** (`PUT`), and **delete** (`DELETE`) products using Postman or another client.
+// - Express.js handles these requests, reads/writes the JSON file, and sends structured responses following REST principles.
 
 const express = require("express"); // Import Express (framework for creating web servers)
 const fs = require("fs"); // Import File System module to handle file reading and writing
